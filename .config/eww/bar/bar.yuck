@@ -1,0 +1,66 @@
+;; Workspace Widget
+(defwidget workspaces []
+  (literal :content workspaces_json)
+)
+
+
+;; Systemtray Widget
+(defwidget systemtray []
+  (box
+    :hexpand false
+    :tooltip "systemtray"
+    :orientation "horizontal"
+    :halign "end"
+    :style "padding-right: 10px"
+    (button 
+      :class 'systemtray'
+      :onclick "${EWW_CMD} open --toggle systemtrayPopup"
+      (box
+        :orientation "horizontal"
+        :halign "end"
+        :spacing "12"
+        (label :text "󰖀")
+        (label :text "${bluetooth_status == 'enabled' ? '' : ''}")
+        (label :text networkIcon)
+      )
+    )
+  )
+)
+
+;; Top bar window
+(defwindow bar
+  :monitor 0
+  :geometry (geometry 
+              :x "0%"
+              :y "5px"
+              :width "90%"
+              :height "30px"
+              :anchor "top center")
+  :stacking "fg"
+  :reserve (struts :distance "40px" :side "top")
+  :exclusive true
+  (box 
+    (workspaces)
+    (label :class "clock" :text "${time}")
+    (systemtray)
+  )
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

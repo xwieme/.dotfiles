@@ -1,0 +1,31 @@
+.bluetoothMenu{
+    border: none;
+    border-radius: 15px;
+    background-color: rgba($color: #010109, $alpha: 0.95);
+}
+
+.bluetoothMenuBox{
+    margin-top: 0px;
+}
+
+.bluetoothPairedItemBtn{
+    margin: 0px 18px 5px 18px;
+    background-color: rgba($color: #292929, $alpha: 0.75);
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.bluetoothConnectedItemBtn{
+    margin: 0px 18px 5px 18px;
+    background-color: rgba($color: #235498, $alpha: 0.75);
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.backBtn {
+    margin: 2px 0px 0px 2px;
+    font-size: 24px;
+    background-color: rgba($color: #010109, $alpha: 0.0);
+}

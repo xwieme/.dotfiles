@@ -1,0 +1,92 @@
+;; Setting button 
+(defwidget settingBtn [icon active name toggle openMenu]
+  (box 
+    :class "${active ? 'settingBoxActive' : 'settingBox'}"
+    :orientation "horizontal"
+    :space-evenly false
+    :spacing 1
+    ;; Button to toggle setting On and Off
+    (button 
+      :class "settingBtn"
+      :onclick "${toggle}"
+      (box
+        :orientation "horizontal"
+        :space-evenly false 
+        :spacing 1
+        (box 
+          :class "iconBox"
+          :halign "start"
+          :valign "center"
+          (label :text "${icon}")
+        )
+        (box 
+          :class "labelBox"
+          :halgin "center"
+          :valign "center"
+          :orientation "vertical"
+          (label
+            :limit-width 10
+            :show-truncated true
+            :text "${name}")
+        )
+      )
+    )
+    ;; Button to go to subsettings, i.e. select wifi network to select to
+    (button 
+      :class "arrowBtn"
+      :halign "end"
+      :valign "center"
+      :hexpand true 
+      :onclick "${openMenu}"
+      (label :text "❯")
+    )
+  )
+)
+
+;; Slider widget
+(defwidget slider [icon value] 
+  (box 
+    :class "sliderBox"
+    :orientation "horizontal"
+    :space-evenly false
+    (label :class "sliderIcon" :text "${icon}")
+    (scale
+      :min 0 
+      :max 100 
+      :hexpand true
+      :value "${value}"
+    )
+    (label :text "${value}%")
+  )
+)
+
+
+;; systemtray popup window
+(defwindow systemtrayPopup
+  :monitor 0
+  :geometry (geometry :x "200px"
+                      :y "10px"
+                      :width "250px"
+                      :anchor "top right")
+  :type "dock"
+  (box 
+    :orientation "vertical"
+    :space-evenly false
+    :spacing "1"
+    (settingBtn 
+      :icon "󰤨" 
+      :active "${wifi_status == 'enabled' ? true : false}" 
+      :name "${connectedWifiNetwork}" 
+      :toggle "scripts/network.sh toggleWifi"
+      :openMenu ""
+    )
+    (settingBtn 
+      :icon "󰂯" 
+      :active "${bluetooth_status == 'enabled' ? true : false}"
+      :name "" 
+      :toggle "scripts/bluetooth.sh toggleBluetooth"
+      :openMenu "${EWW_CMD} close systemtrayPopup && ${EWW_CMD} open bluetoothMenu"
+    )
+    (slider :icon "󰖀" :value "${volume}")
+  )
+)

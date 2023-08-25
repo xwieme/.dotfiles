@@ -1,0 +1,80 @@
+.systemtrayPopup {
+    border: none;
+    border-radius: 15px;
+    background-color: rgba($color: #010109, $alpha: 0.95);
+}
+
+.settingBox {
+    margin: 25px 18px 0px 18px;
+    background-color: rgba($color: #292929, $alpha: 0.85);
+    border: none;
+    border-radius: 25px;
+}
+
+.settingBoxActive {
+    margin: 25px 18px 0px 18px;
+    background-color: rgba($color: #235498, $alpha: 0.95);
+    border: none;
+    border-radius: 25px;
+}
+
+.settingBtn {
+    background-color: rgba($color: #FFFFFF, $alpha: 0);
+    min-width: 150px;
+    border-radius: 25px;
+}
+
+.iconBox {
+    padding: 0px 17px 0px 12px;
+    font-size: 25;
+    background-color: rgba($color: #FFFFFF, $alpha: 0);
+}
+
+.labelBox {
+    margin: 0px 16px 0px 5px;
+    background-color: rgba($color: #FFFFFF, $alpha: 0);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.arrowBtn {
+    background-color: rgba($color: #FFFFFF, $alpha: 0);
+    min-width: 25px;
+    border-radius: 25px;
+}
+
+.sliderBox {
+    margin: 20px 25px 20px 25px;
+    font-size: 16;
+
+    trough {
+        background-color: rgba($color: #292929, $alpha: 0.85);
+        min-height: 12px;
+        border-radius: 100px;
+
+        highlight {
+            border-radius: 100px;
+        }
+    }
+}
+
+.sliderIcon{
+    padding: 0px 0px 0px 12px;
+    font-size: 25;
+    background-color: rgba($color: #FFFFFF, $alpha: 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
