@@ -1,22 +1,23 @@
 .bar {
     border: none;
     border-radius: 15px;
-    background-color: rgba($color: #0a0a09, $alpha: 0.55);
+    background-color: rgba($color: #0a0a09, $alpha: 0.35);
+    
+    .workspaceBtn {
+        border: none;
+        border-radius: 15px;
+        background-color: rgb(0, 0, 0);
+    }
 }
 
 
-.workspaceBtn {
-    border: none;
-    border-radius: 15px;
-    background-color: rgba($color: #0a0a09, $alpha: 0.1);
-}
 
 .systemtray {
-    font-size: 18;
-    background-color: rgba($color: #0a0a09, $alpha: 0.1);
+    font-size: 12px;
+    background-color: rgba($color: #0a0a09, $alpha: 0.0);
 }
 
 .clock {
-    font-size: 14;
+    font-size: 12px;
     font-weight: bold;
 }

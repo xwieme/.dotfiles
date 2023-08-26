@@ -1,7 +1,11 @@
 .systemtrayPopup {
     border: none;
     border-radius: 15px;
-    background-color: rgba($color: #010109, $alpha: 0.95);
+    background-color: rgba($color: #010109, $alpha: 0.55);
+}
+
+button {
+    background-color: transparent;
 }
 
 .settingBox {
@@ -18,15 +22,15 @@
     border-radius: 25px;
 }
 
-.settingBtn {
-    background-color: rgba($color: #FFFFFF, $alpha: 0);
+.settingButton {
+    background-color: transparent; 
     min-width: 150px;
     border-radius: 25px;
 }
 
 .iconBox {
     padding: 0px 17px 0px 12px;
-    font-size: 25;
+    font-size: 25px;
     background-color: rgba($color: #FFFFFF, $alpha: 0);
 }
 
@@ -45,7 +49,7 @@
 
 .sliderBox {
     margin: 20px 25px 20px 25px;
-    font-size: 16;
+    font-size: 16px;
 
     trough {
         background-color: rgba($color: #292929, $alpha: 0.85);
@@ -60,7 +64,7 @@
 
 .sliderIcon{
     padding: 0px 0px 0px 12px;
-    font-size: 25;
+    font-size: 25px;
     background-color: rgba($color: #FFFFFF, $alpha: 0);
 }
 

@@ -34,10 +34,10 @@
               :x "0%"
               :y "5px"
               :width "90%"
-              :height "30px"
+              :height "20px"
               :anchor "top center")
   :stacking "fg"
-  :reserve (struts :distance "40px" :side "top")
+  :reserve (struts :distance "20px" :side "top")
   :exclusive true
   (box 
     (workspaces)

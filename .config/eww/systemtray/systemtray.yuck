@@ -7,7 +7,7 @@
     :spacing 1
     ;; Button to toggle setting On and Off
     (button 
-      :class "settingBtn"
+      :class "settingButton"
       :onclick "${toggle}"
       (box
         :orientation "horizontal"
@@ -54,7 +54,7 @@
       :min 0 
       :max 100 
       :hexpand true
-      :value "${value}"
+      :value {value}
     )
     (label :text "${value}%")
   )

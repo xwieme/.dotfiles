@@ -41,7 +41,6 @@ return require('packer').startup(function(use)
     
     -- LSP
     use { 'neovim/nvim-lspconfig' }
-    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' } 
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim'}
     
@@ -50,6 +49,7 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }        -- buffer auto-completion
     use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }          -- path auto-completion
     use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }       -- cmdline auto-completion
+    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' } 
     
     -- Snippets
     use 'L3MON4D3/LuaSnip'
@@ -59,17 +59,32 @@ return require('packer').startup(function(use)
     use 'elkowar/yuck.vim'
 
     -- File browser
-    use 'nvim-tree/nvim-tree.lua'
+    use { 'nvim-tree/nvim-tree.lua', config = [[require('config.nvim-tree')]] }
     use 'nvim-tree/nvim-web-devicons'
 
     -- Telescope 
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim'} } }
+    use { 
+        'nvim-telescope/telescope.nvim', 
+        tag = '0.1.2', 
+        requires = { {'nvim-lua/plenary.nvim'} },
+        config = [[require('config.telescope')]]
+    }
 
     -- Status line
-    use 'nvim-lualine/lualine.nvim'
+    use { 'nvim-lualine/lualine.nvim', config = [[require('config.lualine')]] }
 
     -- Iron for REPL communication
     use 'Vigemus/iron.nvim'
+
+    -- Treesitter
+    use { 
+        'nvim-treesitter/nvim-treesitter', 
+        run = function () 
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true})
+            ts_update()
+        end,
+        config = [[require('config.nvim-treesitter')]]
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

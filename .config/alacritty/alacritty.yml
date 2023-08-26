@@ -28,7 +28,7 @@ font:
   bold_italic: 
     family: Fira Code  Nerd Font 
     style: BoldItalic
-  size: 15
+  size: 10
 draw_bold_text_with_bright_colors: true
 
 import:
