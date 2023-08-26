@@ -1,58 +1,57 @@
 .systemtrayPopup {
     border: none;
     border-radius: 15px;
-    background-color: rgba($color: #010109, $alpha: 0.55);
-}
-
-button {
-    background-color: transparent;
+    background: rgba($color: #010109, $alpha: 0.55);
 }
 
 .settingBox {
     margin: 25px 18px 0px 18px;
-    background-color: rgba($color: #292929, $alpha: 0.85);
     border: none;
     border-radius: 25px;
+    background: rgba($color: #292929, $alpha: 0.85);
 }
 
 .settingBoxActive {
     margin: 25px 18px 0px 18px;
-    background-color: rgba($color: #235498, $alpha: 0.95);
     border: none;
     border-radius: 25px;
+    background: rgba($color: #235498, $alpha: 0.95);
 }
 
 .settingButton {
-    background-color: transparent; 
-    min-width: 150px;
+    border: none;
     border-radius: 25px;
+    background: transparent; 
+    min-width: 150px;
 }
 
 .iconBox {
-    padding: 0px 17px 0px 12px;
+    padding: 0px 17px 0px 0px;
+    background: transparent; 
     font-size: 25px;
-    background-color: rgba($color: #FFFFFF, $alpha: 0);
+    font-family: Fira Code Nerd Font;
 }
 
 .labelBox {
     margin: 0px 16px 0px 5px;
-    background-color: rgba($color: #FFFFFF, $alpha: 0);
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 12px;
+    font-family: Fira Code Nerd Font;
 }
 
 .arrowBtn {
-    background-color: rgba($color: #FFFFFF, $alpha: 0);
+    border: none;
+    background: transparent;
     min-width: 25px;
     border-radius: 25px;
 }
 
 .sliderBox {
-    margin: 20px 25px 20px 25px;
-    font-size: 16px;
+    margin: 20px 25px 20px 15px;
+    font-size: 14px;
+    font-family: Fira Code Nerd Font;
 
     trough {
-        background-color: rgba($color: #292929, $alpha: 0.85);
+        background: rgba($color: #292929, $alpha: 0.85);
         min-height: 12px;
         border-radius: 100px;
 
@@ -64,8 +63,9 @@ button {
 
 .sliderIcon{
     padding: 0px 0px 0px 12px;
+    background: rgba($color: #FFFFFF, $alpha: 0);
     font-size: 25px;
-    background-color: rgba($color: #FFFFFF, $alpha: 0);
+    font-family: Fira Code Nerd Font;
 }
 
 

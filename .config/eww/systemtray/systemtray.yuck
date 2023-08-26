@@ -25,7 +25,7 @@
           :valign "center"
           :orientation "vertical"
           (label
-            :limit-width 10
+            :limit-width 15
             :show-truncated true
             :text "${name}")
         )

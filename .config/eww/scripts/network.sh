@@ -32,7 +32,7 @@ GetWifiStatus () {
 
 # Get the name of the connected wifi network 
 GetConnectedWifiNetwork () {
-    echo "$(nmcli -t connection show --active | grep wifi | cut -d: -f1)"
+    echo "$(nmcli connection show --active | grep wifi | cut -d ' ' -f1)"
 }
 
 # Turn wifi On or Off
