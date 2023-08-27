@@ -122,6 +122,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["iron.nvim"] = {
+    config = { "require('config.iron')" },
     loaded = true,
     path = "/home/xander/.local/share/nvim/site/pack/packer/start/iron.nvim",
     url = "https://github.com/Vigemus/iron.nvim"
@@ -143,7 +144,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-buffer", "cmp-cmdline", "cmp-nvim-lsp", "cmp-path" },
+    after = { "cmp-path", "cmp-buffer", "cmp-cmdline", "cmp-nvim-lsp" },
     config = { "require('config.nvim-cmp')" },
     loaded = true,
     only_config = true,
@@ -196,32 +197,36 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require('config.lualine')
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('config.nvim-cmp')
-time([[Config for nvim-cmp]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('config.telescope')
 time([[Config for telescope.nvim]], false)
+-- Config for: iron.nvim
+time([[Config for iron.nvim]], true)
+require('config.iron')
+time([[Config for iron.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require('config.nvim-tree')
 time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('config.nvim-cmp')
+time([[Config for nvim-cmp]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('config.nvim-treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require('config.lualine')
+time([[Config for lualine.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp-nvim-lsp ]]
 vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd cmp-cmdline ]]
-vim.cmd [[ packadd cmp-path ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

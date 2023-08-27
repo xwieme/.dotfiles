@@ -74,7 +74,7 @@ return require('packer').startup(function(use)
     use { 'nvim-lualine/lualine.nvim', config = [[require('config.lualine')]] }
 
     -- Iron for REPL communication
-    use 'Vigemus/iron.nvim'
+    use { 'Vigemus/iron.nvim', config = [[require('config.iron')]] }
 
     -- Treesitter
     use { 
