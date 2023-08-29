@@ -1,0 +1,69 @@
+;; Bluetooth selection menu 
+(defwindow bluetoothMenu 
+  :monitor 0
+  :geometry (geometry :x "5%"
+                      :y "1%"
+                      :width "250px"
+                      :height "350px"
+                      :anchor "top right")
+  :type "dock"
+  (box 
+    :orientation 'vertical'
+    :space-evenly false
+    :spacing 5
+    (button 
+      :class "backBtn" 
+      :halign "start"
+      :valign "center"
+      :onclick "${EWW_CMD} close bluetoothMenu && ${EWW_CMD} open systemtrayPopup" ""
+    )
+    (literal :vexpand true :content "${bluetooth_devices}")
+  )
+)
+
+
+;; Wifi selection menu 
+(defwindow wifiMenu 
+  :monitor 0
+  :geometry (geometry :x "5%"
+                      :y "1%"
+                      :width "250px"
+                      :height "350px"
+                      :anchor "top right")
+  :type "dock"
+  (box 
+    :orientation 'vertical'
+    :space-evenly false
+    :spacing 5
+
+    (box 
+      :orientation 'horizontal'
+      (button 
+        :class "backBtn" 
+        :halign "start"
+        :valign "center"
+        :onclick "${EWW_CMD} close wifiMenu && ${EWW_CMD} open systemtrayPopup" 
+        ""
+      )
+
+      (button 
+        :class "backBtn" 
+        :halign "center"
+        :valign "center"
+        :onclick "${EWW_CMD} update wifiNetworks='scripts/network.sh GetWifiNetworks'"
+        "󱍸"
+      )
+      
+      (button 
+        :class "backBtn" 
+        :halign "end"
+        :valign "center"
+        :onclick "${EWW_CMD} close wifiMenu" 
+        "󰅙"
+      )
+    )
+
+    (literal :vexpand true :content wifiNetworks)
+
+  )
+)

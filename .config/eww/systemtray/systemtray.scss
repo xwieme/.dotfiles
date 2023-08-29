@@ -1,21 +1,23 @@
 .systemtrayPopup {
     border: none;
     border-radius: 15px;
-    background: rgba($color: #010109, $alpha: 0.55);
+    background: $background; 
 }
 
 .settingBox {
     margin: 25px 18px 0px 18px;
     border: none;
-    border-radius: 25px;
-    background: rgba($color: #292929, $alpha: 0.85);
+    border-radius: 20px;
+    background: $alternate_background;
+    min-height: 50px;
 }
 
 .settingBoxActive {
     margin: 25px 18px 0px 18px;
     border: none;
-    border-radius: 25px;
-    background: rgba($color: #235498, $alpha: 0.95);
+    border-radius: 20px;
+    background: $accent;
+    min-height: 50px;
 }
 
 .settingButton {
@@ -23,19 +25,33 @@
     border-radius: 25px;
     background: transparent; 
     min-width: 150px;
-}
 
-.iconBox {
-    padding: 0px 17px 0px 0px;
-    background: transparent; 
-    font-size: 25px;
-    font-family: Fira Code Nerd Font;
-}
+    pressed {
+        border: none;
+    }
 
-.labelBox {
-    margin: 0px 16px 0px 5px;
-    font-size: 12px;
-    font-family: Fira Code Nerd Font;
+    hover { 
+        border: none;
+    }
+    
+    .iconBox {
+        padding: 0px 17px 0px 0px;
+        background: transparent; 
+        font-size: 25px;
+        font-family: Fira Code Nerd Font;
+    }
+    
+    .labelBox {
+        margin: 5px 16px 0px 5px;
+        font-size: 12px;
+        font-family: Fira Code Nerd Font;
+
+        .settingNameLabel {
+            font-size: 12px;
+            font-family: Fira Code Nerd Font;
+            font-weight: bold;
+        }
+    }
 }
 
 .arrowBtn {
@@ -43,28 +59,45 @@
     background: transparent;
     min-width: 25px;
     border-radius: 25px;
+    
+    pressed{
+        border: none;
+    }
+}
+
+.slidersBox {
+    border: none;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 1px 10px 1px 10px;
+    background: $alternate_background;
 }
 
 .sliderBox {
-    margin: 20px 25px 20px 15px;
     font-size: 14px;
     font-family: Fira Code Nerd Font;
 
+    slider {
+        background: transparent;
+    }
+
     trough {
-        background: rgba($color: #292929, $alpha: 0.85);
-        min-height: 12px;
+        background: $accent2; 
+        min-height: 15px;
         border-radius: 100px;
 
         highlight {
             border-radius: 100px;
+            background: $accent;
         }
+
     }
 }
 
 .sliderIcon{
-    padding: 0px 0px 0px 12px;
-    background: rgba($color: #FFFFFF, $alpha: 0);
-    font-size: 25px;
+    padding: 0px 5px 0px 12px;
+    background: transparent;
+    font-size: 20px;
     font-family: Fira Code Nerd Font;
 }
 

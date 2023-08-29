@@ -1,15 +1,20 @@
 ;; Genral variables
 (defpoll workspaces_json :interval "30ms" "scripts/workspaces.sh")
-(defpoll time :interval "1s" :initial "00:00:00" "date +%H:%M:%S")
+(defpoll time :interval "1s" :initial "00:00:00" "date +'%a %b %e | %H:%M:%S'")
 
 ;; Wifi variables 
 (defpoll networkIcon :interval "1s" :initial " " "scripts/network.sh GetNetworkIcon")
 (defpoll wifi_status :interval "1s" :inital "disabled" "scripts/network.sh GetWifiStatus")
 (defpoll connectedWifiNetwork :interval "1s" :initial "" "scripts/network.sh GetConnectedWifiNetwork")
+(defvar wifiNetworks "")
 
 ;; Bluetooth variables
 (defpoll bluetooth_status :interval "1s" :initial "disabled" "scripts/bluetooth.sh GetBluetoothStatus")
-(defpoll paired_bluetooth_devices :interval "1s" :initial "" "scripts/bluetooth.sh GetDevices")
+(defvar bluetooth_devices "")
 
 ;; Sound variables 
+(defpoll volumeIcon :interval "30ms" :initial "" "scripts/volume.sh GetVolumeIcon")
 (defpoll volume :interval "30ms" :initial "25" "scripts/volume.sh GetVolume")
+
+;; Screen brightness variables 
+(defpoll brightness :interval "1s" :initial "0" "brightnessctl get")

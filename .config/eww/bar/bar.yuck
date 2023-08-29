@@ -19,7 +19,7 @@
         :orientation "horizontal"
         :halign "end"
         :spacing "12"
-        (label :text "󰖀")
+        (label :text "${volumeIcon}")
         (label :text "${bluetooth_status == 'enabled' ? '' : ''}")
         (label :text networkIcon)
       )

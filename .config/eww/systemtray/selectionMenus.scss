@@ -1,0 +1,103 @@
+.bluetoothMenu{
+    border: none;
+    border-radius: 15px;
+    background: $background;
+
+    .bluetoothMenuScroll {
+        padding: 2px;
+
+    }
+
+    .bluetoothMenuBox{
+        margin-top: 0px;
+
+        .bluetoothPairedItemBtn{
+            margin: 0px 18px 5px 18px;
+            border: none;
+            border-radius: 7px;
+            background: $alternate_background;
+            font-size: 14px;
+            font-family: Fira Code Nerd Font;
+        }
+
+        .bluetoothConnectedItemBtn{
+            margin: 0px 18px 5px 18px;
+            border: none;
+            border-radius: 7px;
+            background: $accent; 
+            font-size: 14px;
+            font-family: Fira Code Nerd Font;
+        }
+    }
+}
+
+
+.wifiMenu {
+    border: none;
+    border-radius: 15px;
+    background: $background;
+}
+
+.backBtn {
+    margin: 2px 0px 0px 2px;
+    background: transparent;
+    font-size: 24px;
+    font-family: Fira Code Nerd Font;
+}
+
+.separatorLabel {
+    margin: 10px 15px 15px 15px;
+    padding: 0px;
+    border: none;
+    border-radius: 15px;
+    background: $accent2;
+    min-width: 200px;
+    font-size: 12px;
+    font-family: Fira Code Nerd Font;
+    font-weight: bold;
+}
+
+.nameLabel {
+    font-size: 14px;
+    font-family: Fira Code Nerd Font;
+    font-weight: bold;
+}
+
+.infoLabel {
+    border: none;
+    border-radius: 15px;
+    padding: 0px;
+    font-size: 11px;
+    font-family: Fira Code Nerd Font;
+}
+
+.itemBtn {
+    margin: 0px 18px 5px 18px;
+    border: none;
+    border-radius: 7px;
+    background: $alternate_background;
+    font-size: 14px;
+    font-family: Fira Code Nerd Font;
+}
+
+.connectedItemBtn {
+    margin: 0px 18px 5px 18px;
+    border: none;
+    border-radius: 7px;
+    background: $accent; 
+    font-size: 14px;
+    font-family: Fira Code Nerd Font;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
