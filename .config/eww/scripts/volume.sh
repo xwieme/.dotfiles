@@ -7,18 +7,22 @@ GetVolume () {
 GetVolumeIcon () {
 
     volume=$(GetVolume)
+    mute_state=$(pamixer --get-mute)
 
-    if [[ $volume -eq 0 ]] 
+    if [ "$mute_state" == "true" ] 
     then 
-        echo "" 
+        echo 󰖁
+    elif [[ $volume -eq 0 ]] 
+    then 
+        echo  
     elif [[ $volume -le 33 ]]
     then
-        echo "" 
+        echo  
     elif [[ $volume -le 66 ]] 
     then 
-        echo "墳" 
+        echo 墳 
     else 
-        echo ""
+        echo 
     fi
 
 }

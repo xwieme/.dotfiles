@@ -17,4 +17,10 @@
 (defpoll volume :interval "30ms" :initial "25" "scripts/volume.sh GetVolume")
 
 ;; Screen brightness variables 
-(defpoll brightness :interval "1s" :initial "0" "brightnessctl get")
+(defpoll brightness :interval "30ms" :initial "0" "brightnessctl -m | cut -d, -f4 | sed 's/%//'")
+
+;; Battery variables 
+(defpoll battery_icon :interval "30ms" :initial "󰁹" "scripts/battery.sh GetBatteryIcon")
+(defpoll battery_scss_class :interval "30ms" :initial "normalBatteryWidget" "scripts/battery.sh GetBatteryClass")
+(defvar showed_low_battery_message "False")
+(defvar showed_critical_battery_message "False")

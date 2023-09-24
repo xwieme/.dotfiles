@@ -69,6 +69,7 @@
 )
 
 
+
 ;; systemtray popup window
 (defwindow systemtrayPopup
   :monitor 0
@@ -98,10 +99,10 @@
       :openMenu "${EWW_CMD} close systemtrayPopup && ${EWW_CMD} open bluetoothMenu"
     )
     (box 
-      :class "slidersBox"
+     :class "slidersBox"
       :orientation "vertical"
       (slider :icon "${volumeIcon}" :value "${volume}" :onChange "pamixer --set-volume {}")
-      (slider :icon "󰃠" :value "${brightness}" :onChange "brightnessctl set {}")
+      (slider :icon "󰃠" :value "${brightness}" :onChange "brightnessctl set {}%")
     )
   )
 )

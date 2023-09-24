@@ -78,15 +78,18 @@
     font-family: Fira Code Nerd Font;
 
     slider {
+        border: none;
         background: transparent;
     }
 
     trough {
         background: $accent2; 
         min-height: 15px;
+        border: none;
         border-radius: 100px;
 
         highlight {
+            border: none;
             border-radius: 100px;
             background: $accent;
         }
@@ -94,20 +97,12 @@
     }
 }
 
-.sliderIcon{
+.sliderIcon {
     padding: 0px 5px 0px 12px;
     background: transparent;
     font-size: 20px;
     font-family: Fira Code Nerd Font;
 }
-
-
-
-
-
-
-
-
 
 
 

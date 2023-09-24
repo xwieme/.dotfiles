@@ -25,3 +25,25 @@
     font-weight: bold;
     font-family: Fira Code Nerd Font;
 }
+
+.batteryLevelTxt {
+    padding: 4px 3px 0px 0px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Fira Code Nerd Font;
+}
+
+.normalPowerBatteryWidget {
+    background: transparent;
+}
+
+.lowPowerBatteryWidget {
+    background: transparent;
+    color: $attention_color;
+}
+
+.criticalBatteryWidget {
+    background: transparent;
+    color: $critical_color;
+}
+

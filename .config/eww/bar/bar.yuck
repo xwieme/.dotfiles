@@ -3,10 +3,23 @@
   (literal :content workspaces_json)
 )
 
+;; Battery widget 
+(defwidget batteryStatus []
+  (box 
+    :class "${battery_scss_class}"
+    :orientation "horizontal"
+    (label 
+      :class "batteryLevelTxt" 
+      :text "${EWW_BATTERY.BAT0.capacity}"
+    )
+    (label :text "${battery_icon}")
+  )
+)
 
 ;; Systemtray Widget
 (defwidget systemtray []
   (box
+    :space-evenly false
     :hexpand false
     :tooltip "systemtray"
     :orientation "horizontal"
@@ -18,7 +31,10 @@
       (box
         :orientation "horizontal"
         :halign "end"
-        :spacing "12"
+        :space-evenly false
+        :spacing "15"
+;;        (label :text "${EWW_BATTERY.BAT0.capacity}")
+        (batteryStatus)
         (label :text "${volumeIcon}")
         (label :text "${bluetooth_status == 'enabled' ? '' : ''}")
         (label :text networkIcon)

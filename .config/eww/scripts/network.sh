@@ -4,7 +4,6 @@
 # Return icon corresponding to which network type is used
 GetNetworkIcon () {
 
-
     if [ $(cat /sys/class/net/enp*/operstate) = up ]
     then
         echo 
