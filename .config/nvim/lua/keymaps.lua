@@ -8,6 +8,8 @@ local opts = {
 -- Normal mode --
 -----------------
 
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+
 -- Better window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
@@ -36,12 +38,15 @@ vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
 ---------------
--- Nvim tree --
----------------
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>', opts)
-
----------------
 -- Telescope --
 ---------------
 vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>', opts)
 vim.keymap.set('n', '<C-t>', '<cmd>Telescope live_grep<cr>', opts)
+
+----------
+-- Iron --
+----------
+vim.keymap.set('n', '<leader>rs', '<cmd>IronRepl<cr>')
+vim.keymap.set('n', '<leader>rr', '<cmd>IronRestart<cr>')
+vim.keymap.set('n', '<leader>rf', '<cmd>IronFocus<cr>')
+vim.keymap.set('n', '<leader>rh', '<cmd>IronHide<cr>')

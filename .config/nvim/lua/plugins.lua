@@ -46,10 +46,10 @@ return require('packer').startup(function(use)
     
     -- cmp
     use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }    
+    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' } 
     use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }        -- buffer auto-completion
     use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }          -- path auto-completion
     use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }       -- cmdline auto-completion
-    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' } 
     
     -- Snippets
     use 'L3MON4D3/LuaSnip'
@@ -57,10 +57,6 @@ return require('packer').startup(function(use)
     
     -- eww config syntax support
     use 'elkowar/yuck.vim'
-
-    -- File browser
-    use { 'nvim-tree/nvim-tree.lua', config = [[require('config.nvim-tree')]] }
-    use 'nvim-tree/nvim-web-devicons'
 
     -- Telescope 
     use { 
