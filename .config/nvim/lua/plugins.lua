@@ -38,6 +38,9 @@ return require('packer').startup(function(use)
 
     -- Color themes
     use { "catppuccin/nvim", as = "catppuccin" }
+
+    -- tmux navigation
+    use { 'christoomey/vim-tmux-navigator' }
     
     -- LSP
     use { 'neovim/nvim-lspconfig' }

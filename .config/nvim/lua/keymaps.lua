@@ -50,3 +50,11 @@ vim.keymap.set('n', '<leader>rs', '<cmd>IronRepl<cr>')
 vim.keymap.set('n', '<leader>rr', '<cmd>IronRestart<cr>')
 vim.keymap.set('n', '<leader>rf', '<cmd>IronFocus<cr>')
 vim.keymap.set('n', '<leader>rh', '<cmd>IronHide<cr>')
+
+---------------------
+-- tmux navigation --
+---------------------
+vim.keymap.set('n', '<C-h>', '<cmd> TmuxNavigateLeft<CR>') 
+vim.keymap.set('n', '<C-h>', '<cmd> TmuxNavigateRight<CR>')
+vim.keymap.set('n', '<C-h>', '<cmd> TmuxNavigateDown<CR>')
+vim.keymap.set('n', '<C-h>', '<cmd> TmuxNavigateUp<CR>')
