@@ -7,6 +7,7 @@ This repository contains my configuration files for:
   - Rofi
   - Eww
   - Neovim
+  - tmux
   - Swaylock
 
 # Prerequisites

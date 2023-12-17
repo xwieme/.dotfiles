@@ -1,3 +1,6 @@
 [submodule ".config/zsh/themes/spaceship-prompt"]
 	path = .config/zsh/themes/spaceship-prompt
 	url = git@github.com:spaceship-prompt/spaceship-prompt.git
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git

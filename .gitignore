@@ -1,0 +1,2 @@
+# Ignore github repositories of tmux plugins
+.config/tmux/plugins/*
