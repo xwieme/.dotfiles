@@ -2,7 +2,7 @@ show-failed-attempts
 clock
 effect-blur=5x5
 color=092b5180
-font="Inter"
+font="Fira Code Nerd Font"
 indicator
 indicator-radius=200
 indicator-thickness=20
@@ -29,6 +29,7 @@ bs-hl-color=31748f
 grace=1
 grace-no-mouse
 grace-no-touch
-datestr=%A %d %B
-fade-in="0.1"
+datestr=%a %d %B
+ignore-empty-password
+image=~/Pictures/index.jpg 
 ignore-empty-password

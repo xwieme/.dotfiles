@@ -14,3 +14,4 @@ This repository contains my configuration files for:
 - `jq` : Used in the configuration of eww
 - `ripgrep` : Used by the neovim plugin telescope
 - `swaybg` : Used to set wallpaper in Hyprland 
+- `perl-file-homedir` and `perl-yaml-tiny`: Used for formatting latex files in neovim 

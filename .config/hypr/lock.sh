@@ -12,5 +12,6 @@ do
 done
 
 # Apply the window opacity
+echo "$cmd"
 hyprctl --batch $cmd
 
