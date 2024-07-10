@@ -38,6 +38,7 @@
         (label :text "${volumeIcon}")
         (label :text "${bluetooth_status == 'enabled' ? '' : ''}")
         (label :text networkIcon)
+        (label :text "${vpn_status == 'Connected' ? '󰦝' : ''}")
       )
     )
   )

@@ -22,6 +22,56 @@
 )
 
 
+;; Connect to wifi with password menu
+(defwindow connectToWifiMenu
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :anchor "center")
+  :type "dock"
+  :focusable true
+  (box 
+    :orientation "vertical"
+    :space-evenly false 
+    :spacing 5
+    :style 'margin: 25px'
+
+    (label :class "passwordTitle" :text "Connect to WiFi network")
+
+    (box 
+      :orientation "horizontal"
+      (label :class "passwordLabel" :text "SSID: ")
+      (label :class "passwordLabel" :text "${ssid_to_connect}")
+    )
+
+    (box 
+      :orientation "horizontal"
+      (label :class "passwordLabel" :text "Password: ")
+      (input :class "passwordInput" :password true)
+    )
+
+    (box
+      :orientation "horizontal"
+      :space-evenly false
+      :spacing 5
+      :halign "center"
+      :style "margin-top: 10px"
+      (button 
+        :class "connectBtn"
+        :onclick "${EWW_CMD} close connectToWifiMenu"
+        "Cancel"
+      )
+      (button 
+        :class "connectBtn"
+        :onclick "${EWW_CMD} close connectToWifiMenu"
+        "Connect"
+      )
+    )
+
+  )
+)
+
+
 ;; Wifi selection menu 
 (defwindow wifiMenu 
   :monitor 0

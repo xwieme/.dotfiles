@@ -44,14 +44,24 @@ GetConnectivity () {
     echo "$(nmcli network connectivity)"
 }
 
-# Get the status of wifi, i.e. enable or disabled 
+# Check if WiFi is enabled or disabled
 GetWifiStatus () {
     echo "$(nmcli radio wifi)"
+}
+
+GetVPNStatus () {
+    echo "$(nordvpn status | grep -i status | awk '{print $3}')"
 }
 
 # Get the name of the connected wifi network 
 GetConnectedWifiNetwork () {
     echo "$(nmcli -t connection show --active | grep wifi | cut -d: -f1)"
+}
+
+# Get the signal strength of the connected wifi network,
+# which is indicated with a '*' in the output of 'nmcli dev wifi'
+GetConnectedWifiSignal () {
+    echo "$(nmcli -t dev wifi | grep "*" | cut -d: -f12)"
 }
 
 # Create an eww box containing two parts. One part is a button with information 
@@ -115,14 +125,30 @@ GetWifiNetworks () {
             )
             "
         else
-            eww_discoverd_networks_string+="
-            (button 
-                :class 'itemBtn' 
-                :timeout '10s'
-                :onclick 'nmcli con up ${ssid} && ./scripts/network.sh updateWifiVars'
-                ${eww_string}
-            )
-            "
+
+            b_saved_network="$(nmcli con show | awk '{print $1}' | grep -wG ${ssid}$)"
+
+            if [[ "$b_saved_network" == "" ]]
+            then 
+
+                eww_discoverd_networks_string+="
+                (button 
+                    :class 'itemBtn' 
+                    :timeout '10s'
+                    :onclick 'eww update ssid_to_connect=${ssid} && eww open connectToWifiMenu'
+                    ${eww_string}
+                )
+                "
+            else 
+                eww_discoverd_networks_string+="
+                (button 
+                    :class 'itemBtn' 
+                    :timeout '10s'
+                    :onclick 'notify-send -t 1000 \"connecting to ${ssid}\" && nmcli con up ${ssid} && ./scripts/network.sh updateWifiVars'
+                    ${eww_string}
+                )
+                "
+            fi
         fi
 
     # Pass the output of nmcli to the while read loop. Only select (-f)
@@ -161,20 +187,34 @@ GetWifiNetworks () {
 
 }
 
-# Get the signal strength of the connected wifi network,
-# which is indicated with a '*' in the output of 'nmcli dev wifi'
-GetConnectedWifiSignal () {
-    echo "$(nmcli -t dev wifi | grep "*" | cut -d: -f12)"
-}
 
 # Turn wifi On or Off
 toggleWifi () {
     
     if [[ $(GetWifiStatus) == 'enabled' ]]
     then
+        notify-send -t 1000 "Turning wifi off"
         nmcli radio wifi off 
     else
+        notify-send -t 1000 "Turning wifi on"
         nmcli radio wifi on 
+    fi
+}
+
+
+# Connect or disconnect to vpn
+toggleVPN () {
+    
+    if [[ $(GetVPNStatus) == 'Connected' ]]
+    then
+        # For some reason WiFi needs to turn off and on after disconnecting from VPN
+        notify-send -t 1000 "Disconnecting from VPN"
+        nordvpn disconnect
+        toggleWifi
+        toggleWifi
+    else
+        notify-send -t 1000 "Connecting to VPN"
+        nordvpn connect
     fi
 }
 

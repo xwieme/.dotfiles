@@ -31,6 +31,11 @@
     }
 }
 
+.connectToWifiMenu {
+    border: none;
+    border-radius: 15px;
+    background: $background;
+}
 
 .wifiMenu {
     border: none;
@@ -44,6 +49,14 @@
     background: transparent;
     font-size: 24px;
     font-family: Fira Code Nerd Font;
+}
+
+.connectBtn {
+  margin: 5px 0px 0px 5px;
+  border: 2px;
+  background: $alternate_background;
+  font-size: 12px;
+  font-family: Fira Code Nerd Font;
 }
 
 .separatorLabel {
@@ -70,6 +83,29 @@
     padding: 0px;
     font-size: 11px;
     font-family: Fira Code Nerd Font;
+}
+
+.passwordTitle {
+  margin: 0px 0px 10px 0px;
+  font-size: 14px;
+  font-family: Fira Code Nerd Font;
+  font-weight: bold;
+}
+
+.passwordLabel {
+  margin: 0px 25px 0px 0px;
+  font-size: 12px;
+  font-family: Fira Code Nerd Font;
+}
+
+.passwordInput {
+  margin: 0px 25px 0px 0px;
+  border: 2px;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 11px;
+  font-family: Fira Code Nerd Font;
+  background: $alternate_background;
 }
 
 .itemBtn {

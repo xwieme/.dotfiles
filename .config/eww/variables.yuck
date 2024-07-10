@@ -6,7 +6,9 @@
 (defpoll networkIcon :interval "1s" :initial " " "scripts/network.sh GetNetworkIcon")
 (defpoll wifi_status :interval "1s" :inital "disabled" "scripts/network.sh GetWifiStatus")
 (defpoll connectedWifiNetwork :interval "1s" :initial "" "scripts/network.sh GetConnectedWifiNetwork")
+(defpoll vpn_status :interval "1s" :initial "disconnected" "scripts/network.sh GetVPNStatus")
 (defvar wifiNetworks "")
+(defvar ssid_to_connect "wifi-1.0")
 
 ;; Bluetooth variables
 (defpoll bluetooth_status :interval "1s" :initial "disabled" "scripts/bluetooth.sh GetBluetoothStatus")

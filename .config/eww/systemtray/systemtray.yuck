@@ -37,7 +37,7 @@
         )
       )
     )
-    ;; Button to go to subsettings, i.e. select wifi network to select to
+    ;; Button to go to subsettings, i.e. select wifi network 
     (button 
       :class "arrowBtn"
       :halign "end"
@@ -81,13 +81,21 @@
   (box 
     :orientation "vertical"
     :space-evenly false
-    :spacing "1"
+    :spacing "0"
     (settingBtn 
       :icon "󰤨" 
       :active "${wifi_status == 'enabled' ? true : false}" 
       :settingName "Wifi"
       :name "${connectedWifiNetwork}" 
       :toggle "scripts/network.sh toggleWifi"
+      :openMenu "${EWW_CMD} close systemtrayPopup && ${EWW_CMD} open wifiMenu && scripts/network.sh updateWifiVars"
+    )
+    (settingBtn 
+      :icon "󰦝" 
+      :active "${vpn_status == 'Connected' ? true : false}" 
+      :settingName "VPN"
+      :name "${vpn_status == 'Connected' ? "Connected" : "Disconnected"}" 
+      :toggle "scripts/network.sh toggleVPN"
       :openMenu "${EWW_CMD} close systemtrayPopup && ${EWW_CMD} open wifiMenu && scripts/network.sh updateWifiVars"
     )
     (settingBtn 
