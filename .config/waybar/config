@@ -1,0 +1,83 @@
+// __        __          _                 
+// \ \      / /_ _ _   _| |__   __ _ _ __  
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
+//   \ V  V / (_| | |_| | |_) | (_| | |    
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
+//                 |___/                   
+//  
+// ----------------------------------------------------- 
+//
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 4,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock", "custom/updates"],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+    ],
+
+    "clock": {
+        "format": "{:%a %d %b %H:%M }",
+        "format-alt": "{:%F %T}",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "{used:0.1f}G "
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "   {signalStrength}%",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "Disconnected",
+        "tooltip-format": "󰈀 {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": "󰈀 {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": " ",
+        "format-icons": {
+        "headphone": " ",
+        "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/updates": {
+        "format": " {}",
+        "interval": 3600,                     			// every hour
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/checkupdates.sh",	// # of updates
+        "exec-if": "exit 0",                  			// always run; consider advanced run conditions
+        "signal": 8,
+        "tooltip": false,
+    },
+
+}

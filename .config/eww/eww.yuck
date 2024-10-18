@@ -1,6 +1,0 @@
-(include "variables.yuck")
-(include "./bar/bar.yuck")
-(include "./systemtray/selectionMenus.yuck")
-(include "./systemtray/systemtray.yuck")
-
-
