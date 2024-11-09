@@ -1,3 +1,4 @@
+
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.mouse = "a" -- allow the mouse to be used in Nvim
@@ -15,6 +16,7 @@ vim.opt.cursorline = true -- highlight cursor line underneath the cursor horizon
 vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
 vim.opt.showmode = false -- don't show "-- INSERT --"
+vim.opt.colorcolumn = "80" -- Set a column indicator at 80 characters
 
 -- Searching
 vim.opt.incsearch = true -- search as characters are entered
@@ -32,5 +34,3 @@ vim.opt.termguicolors = true
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 
--- Leader key
-vim.g.mapleader = " "
