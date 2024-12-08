@@ -1,2 +1,4 @@
 # Ignore github repositories of tmux plugins
 .config/tmux/plugins/*
+
+.config/nvim/lazy-lock.json
