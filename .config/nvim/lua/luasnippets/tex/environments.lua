@@ -7,7 +7,7 @@ local rep = require("luasnip.extras").rep
 
 ls.add_snippets("tex", {
 
-    s({ trig = "env" }, fmta(
+    s({ trig = "env", snippetType = "autosnippet" }, fmta(
         [[
         \begin{<>}
             <>
@@ -15,7 +15,7 @@ ls.add_snippets("tex", {
         ]], { i(1), i(2), rep(1) }
     )),
 
-    s({ trig = "eq" }, fmta(
+    s({ trig = ";eq", snippetType = "autosnippet" }, fmta(
         [[
         \begin{equation}
             <>
@@ -23,7 +23,7 @@ ls.add_snippets("tex", {
         ]], { i(1) }
     )),
 
-    s({ trig = "all" }, fmta(
+    s({ trig = ";al", snippetType = "autosnippet" }, fmta(
         [[
         \begin{align}
             <>
@@ -31,15 +31,15 @@ ls.add_snippets("tex", {
         ]], { i(1) }
     )),
 
-    s({ trig = "itt" }, fmta(
+    s({ trig = ";it", snippetType = "autosnippet" }, fmta(
         [[
-        \begin{align}
+        \begin{itemize}
             <>
-        \end{align}
+        \end{itemize}
         ]], { i(1) }
     )),
 
-    s({ trig = "enu" }, fmta(
+    s({ trig = ";en", snippetType = "autosnippet" }, fmta(
         [[
         \begin{enumerate}
             <>
@@ -47,7 +47,7 @@ ls.add_snippets("tex", {
         ]], { i(1) }
     )),
 
-    s({ trig = "pm" }, fmta(
+    s({ trig = ";pm", snippetType = "autosnippet" }, fmta(
         [[
         \begin{pmatrix}
             <>
@@ -55,7 +55,7 @@ ls.add_snippets("tex", {
         ]], { i(1) }
     )),
 
-    s({ trig = "case" }, fmta(
+    s({ trig = ";ca", snippetType = "autosnippet" }, fmta(
         [[
         \begin{cases}
             <>
@@ -63,7 +63,7 @@ ls.add_snippets("tex", {
         ]], { i(1) }
     )),
 
-    s({ trig = "qu" }, fmta(
+    s({ trig = ";qu", snippetType = "autosnippet" }, fmta(
         [[
         \begin{quote}
             <>

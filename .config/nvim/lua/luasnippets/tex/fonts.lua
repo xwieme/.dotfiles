@@ -23,7 +23,7 @@ ls.add_snippets("tex", {
         [[\\mathbb{<>}]], { i(1) }
     )),
 
-    s({ trig = ";mbf", snippetType = "autosnippet" }, fmta(
+    s({ trig = ";mf", snippetType = "autosnippet" }, fmta(
         [[\\mathbf{<>}]], { i(1) }
     )),
 })
