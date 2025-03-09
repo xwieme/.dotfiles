@@ -12,7 +12,7 @@
 @define-color background1 #1e1e2e;
 @define-color background2 #313244;
 @define-color textcolor1 #cdd6f4;
-@define-color textcolor2 #bac2de;
+@define-color textcolor2 #00ff00;
 @define-color textcolor3 #a6adc8;
 
 /* -----------------------------------------------------
@@ -199,8 +199,6 @@ window#waybar.empty #window {
  #bluetooth, #bluetooth.on, #bluetooth.connected {
     font-size: 12px;
     color: @textcolor1;
-    border-radius: 15px;
-    /* margin: 10px 15px 10px 0px; */
     margin: 5px 1px 6px 1px;
     padding: 0px 15px;
     border: 0px;
@@ -221,13 +219,15 @@ window#waybar.empty #window {
 #battery {
     font-size: 12px;
     color: @textcolor1;
+    margin: 5px 1px 6px 1px;
+    padding: 0px 15px;
+    border: 0px;
     border-radius: 15px;
-    margin: 10px 15px 10px 0px;
     background-color: @background1;
 }
 
 #battery.charging, #battery.plugged {
-    color: @textcolor1;
+    color: @textcolor2;
 }
 
 @keyframes blink {
