@@ -7,23 +7,9 @@ local rep = require("luasnip.extras").rep
 
 ls.add_snippets("tex", {
 
-    s({ trig = ";tb", snippetType = "autosnippet" }, fmta(
-        [[\\textbf{<>}]], { i(1) }
-    )),
-
-    s({ trig = ";ul", snippetType = "autosnippet" }, fmta(
-        [[\\underline{<>}]], { i(1) }
-    )),
-
-    s({ trig = ";mc", snippetType = "autosnippet" }, fmta(
-        [[\\mathcal{<>}]], { i(1) }
-    )),
-
-    s({ trig = ";mb", snippetType = "autosnippet" }, fmta(
-        [[\\mathbb{<>}]], { i(1) }
-    )),
-
-    s({ trig = ";mf", snippetType = "autosnippet" }, fmta(
-        [[\\mathbf{<>}]], { i(1) }
-    )),
+  s({ trig = "sf", snippetType = "autosnippet" }, fmta("\\textbf{<>}", { i(1) })),
+  s({ trig = "df", snippetType = "autosnippet" }, fmta("\\underline{<>}", { i(1) })),
+  s({ trig = "jf", snippetType = "autosnippet" }, fmta("\\mathcal{<>}", { i(1) })),
+  s({ trig = "hf", snippetType = "autosnippet" }, fmta("\\mathbb{<>}", { i(1) })),
+  s({ trig = "kf", snippetType = "autosnippet" }, fmta("\\mathbf{<>}", { i(1) })),
 })

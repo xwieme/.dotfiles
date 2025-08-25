@@ -4,28 +4,28 @@ local t = ls.text_node
 local i = ls.insert_node
 local fmta = require("luasnip.extras.fmt").fmta
 
-ls.add_snippets("tex", {
-    s({
-        trig = "([^%w])cb",
-        snippetType = "autosnippet",
-        regTrig = true,
-        wordTrig = false,
-        description = "Left/right curly braces",
-    }, fmta("\\left{ <> \\right}", { i(1) })),
+local in_mathzone = function()
+  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
+end
 
-    s({
-        trig = "([^%w])rb",
-        snippetType = "autosnippet",
-        regTrig = true,
-        wordTrig = false,
-        description = "Left/right parentheses",
-    }, fmta("\\left( <> \\right)", { i(1) })),
+return {
+  s(
+    { trig = "cb", snippetType = "autosnippet", description = "Left/right curly braces", condition = in_mathzone },
+    fmta("\\left{ <> \\right}", { i(1) })
+  ),
 
-    s({
-        trig = "([^%w])sb",
-        snippetType = "autosnippet",
-        regTrig = true,
-        wordTrig = false,
-        description = "Left/right square brackets",
-    }, fmta("\\left[ <> \\right]", { i(1) })),
-})
+  s(
+    { trig = "rb", snippetType = "autosnippet", description = "Left/right parentheses", condition = in_mathzone },
+    fmta("\\left( <> \\right)", { i(1) })
+  ),
+
+  s(
+    {
+      trig = "([^%w])sb",
+      snippetType = "autosnippet",
+      description = "Left/right square brackets",
+      condition = in_mathzone,
+    },
+    fmta("\\left[ <> \\right]", { i(1) })
+  ),
+}
