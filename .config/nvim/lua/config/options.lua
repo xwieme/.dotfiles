@@ -1,4 +1,3 @@
-
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.mouse = "a" -- allow the mouse to be used in Nvim
@@ -32,6 +31,6 @@ vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entere
 vim.opt.termguicolors = true
 
 vim.opt.spell = true
-vim.opt.spelllang = "en_us"
+vim.opt.spelllang = "en_gb"
 
 vim.opt.conceallevel = 2

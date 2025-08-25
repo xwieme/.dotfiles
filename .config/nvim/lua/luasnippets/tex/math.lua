@@ -33,6 +33,8 @@ return {
 
   -- Semantic commands (vec, tilde etc ...)
   ------------------------------------------
+  s({ trig = "mm", snippetType = "autosnippet", wordTrig = false }, fmta("$ <> $", { i(1) })),
+
   s(
     { trig = "ff", snippetType = "autosnippet", wordTrig = false, condition = in_mathzone },
     fmta("\\frac{ <> }{ <> }", { i(1), i(2) })

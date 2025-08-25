@@ -112,8 +112,8 @@ return {
     { trig = "nt", snippetType = "autosnippet", condition = line_begin },
     fmta(
       [[
-        \NewTcbTheorem[number within=section]{theorem}{Theorem}%
-            {colback=green!5, colframe=green!35!black,fonttitle\bfseires}{th}
+        \NewTcbTheorem[number within=chapter]{theorem}{Theorem}%
+            {colback=green!5, colframe=green!35!black,fonttitle=\bfseries}{th}
     ]],
       {}
     )
@@ -123,8 +123,8 @@ return {
     { trig = "nd", snippetType = "autosnippet", condition = line_begin },
     fmta(
       [[
-        \NewTcbTheorem[number within=section]{definition}{Definition}%
-            {colback=blue!5, colframe=blue!35!black,fonttitle\bfseires}{th}
+        \NewTcbTheorem[number within=chapter]{definition}{Definition}%
+            {colback=blue!5, colframe=blue!35!black,fonttitle=\bfseries}{def}
     ]],
       {}
     )
@@ -134,8 +134,8 @@ return {
     { trig = "nl", snippetType = "autosnippet", condition = line_begin },
     fmta(
       [[
-        \NewTcbTheorem[number within=section]{lemma}{Lemma}%
-            {colback=red!5, colframe=red!35!black,fonttitle\bfseires}{th}
+        \NewTcbTheorem[number within=chapter]{lemma}{Lemma}%
+            {colback=red!5, colframe=red!35!black,fonttitle=\bfseries}{lem}
     ]],
       {}
     )
@@ -145,8 +145,8 @@ return {
     { trig = "np", snippetType = "autosnippet", condition = line_begin },
     fmta(
       [[
-        \NewTcbTheorem[number within=section]{proposition}{Proposition}%
-            {colback=red!5, colframe=red!35!black,fonttitle\bfseires}{th}
+        \NewTcbTheorem[number within=chapter]{proposition}{Proposition}%
+            {colback=red!5, colframe=red!35!black,fonttitle=\bfseries}{prop}
     ]],
       {}
     )
@@ -156,8 +156,8 @@ return {
     { trig = "nc", snippetType = "autosnippet", condition = line_begin },
     fmta(
       [[
-        \NewTcbTheorem[number within=section]{corollary}{Corollary}%
-            {colback=red!5, colframe=red!35!black,fonttitle\bfseires}{th}
+        \NewTcbTheorem[number within=chapter]{corollary}{Corollary}%
+            {colback=red!5, colframe=red!35!black,fonttitle=\bfseries}{col}
     ]],
       {}
     )
