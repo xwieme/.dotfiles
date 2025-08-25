@@ -9,7 +9,7 @@ iatest=$(expr index "$-" i)
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bash.bashrc
+	. /etc/bashrc
 fi
 
 # Enable bash programmable completion features in interactive shells
@@ -99,7 +99,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Edit this .bashrc file
-alias ebrc='edit ~/.bashrc'
+alias ebrc='nvim ~/.bashrc'
 
 # Show help for this .bashrc file
 alias hlp='less ~/.bashrc_help'
@@ -331,10 +331,13 @@ cd ()
 	fi
 }
 
+# kitty ssh fix
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+
 #######################################################
 # Set the ultimate amazing command prompt
 #######################################################
 
-export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
+export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin:$HOME/.local/bin/nvim-linux64/bin:$HOME/Applications/julia-1.11.3/bin"
 
 eval "$(starship init bash)"

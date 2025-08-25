@@ -27,6 +27,7 @@ floating_modifier $mod
 bindsym $mod+q kill
 bindsym $mod+Return exec kitty
 bindsym $mod+space exec "rofi -modi drun,run -show drun"
+bindsym $mod+p exec "papis -s picktool rofi open"
 
 # change focus
 bindsym $mod+j focus down
