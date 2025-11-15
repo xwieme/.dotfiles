@@ -1,8 +1,6 @@
 # Dotfiles
----
 
 ## Installation
----
 
 Install packages and dotfiles: 
 
