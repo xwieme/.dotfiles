@@ -1,10 +1,11 @@
 #!/usr/bin/bash
 
-# Install packages
-# sudo pacman -Syyu hyprland \
+# # Install packages
+# sudo pacman -Syyu --needed \
+#     hyprland \
+#     hyprpaper \
 # 	kitty \
 # 	mako \
-# 	picom \
 # 	rofi \
 # 	swaybg \
 # 	swaylock \
@@ -34,18 +35,36 @@
 # 	perl-file-homedir \
 # 	perl-yaml-tiny \
 # 	gcc \
-# 	make
+# 	make \
+#     bluez \
+#     bluez-utils \
+#     pavucontrol \
+#     pulseaudio \
+#     pulseaudio-bluetooth \
+#     vlc-plugin-pulse \
+#     vlc \
+#     xcur2png
+#
+#
+# # Install dotfiles
+# cp -r hypr $HOME/.config/
+# cp -r kitty $HOME/.config/
+# cp -r mako $HOME/.config/
+# cp -r nvim $HOME/.config/
+# cp -r rofi $HOME/.config/
+# cp -r swaylock $HOME/.config/
+# cp -r tmux $HOME/.config/
+# cp -r waybar $HOME/.config/
+# cp -r yazi $HOME/.config/
+# cp -r starship.toml $HOME/.config/
+# cp -r --remove-destination .bashrc $HOME
 
-# Install dotfiles
-cp -r hypr $HOME/.config/
-cp -r kitty $HOME/.config/
-cp -r mako $HOME/.config/
-cp -r nvim $HOME/.config/
-cp -r picom $HOME/.config/
-cp -r rofi $HOME/.config/
-cp -r swaylock $HOME/.config/
-cp -r tmux $HOME/.config/
-cp -r waybar $HOME/.config/
-cp -r yazi $HOME/.config/
-cp -r starship.toml $HOME/.config/
-cp -r --remove-destination .bashrc $HOME
+# Install cursor theme
+tar -xvf Bibata-Modern-Ice.tar.xz
+hyprcursor-util --extract Bibata-Modern-Ice
+sed -i 's/Extracted Theme/Bibata-Modern-Ice/' extracted_Bibata-Modern-Ice/manifest.hl
+hyprcursor-util --create extracted_Bibata-Modern-Ice
+rm -rf Bibata-Modern-Ice extracted_Bibata-Modern-Ice
+mv theme_Bibata-Modern-Ice Bibata-Modern-Ice
+mv Bibata-Modern-Ice $HOME/.local/share/icons
+hyprctl setcursor Bibata-Modern-Ice 24
