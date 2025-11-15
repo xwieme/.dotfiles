@@ -43,7 +43,9 @@
 #     pulseaudio-bluetooth \
 #     vlc-plugin-pulse \
 #     vlc \
-#     xcur2png
+#     xcur2png \
+#     openssh \
+#     wl-clipboard
 #
 #
 # # Install dotfiles
