@@ -1,65 +1,67 @@
 #!/usr/bin/bash
 
-# # Install packages
-# sudo pacman -Syyu --needed \
-#     hyprland \
-#     hyprpaper \
-# 	kitty \
-# 	mako \
-# 	rofi \
-# 	swaybg \
-# 	swaylock \
-# 	tmux \
-# 	waybar \
-# 	yazi \
-# 	starship \
-# 	nix \
-# 	pamixer \
-# 	discord \
-# 	spotify-launcher \
-# 	ttf-nerd-fonts-symbols \
-# 	ttf-fira-code \
-# 	pipewire \
-# 	wireplumber \
-# 	qt5-wayland \
-# 	qt6-wayland \
-# 	noto-fonts \
-# 	firefox \
-# 	chromium \
-# 	thunderbird \
-#  	lazygit \
-# 	brightnessctl \
-# 	libnotify \
-# 	trash-cli \
-# 	ripgrep \
-# 	perl-file-homedir \
-# 	perl-yaml-tiny \
-# 	gcc \
-# 	make \
-#     bluez \
-#     bluez-utils \
-#     pavucontrol \
-#     pulseaudio \
-#     pulseaudio-bluetooth \
-#     vlc-plugin-pulse \
-#     vlc \
-#     xcur2png \
-#     openssh \
-#     wl-clipboard
-#
-#
-# # Install dotfiles
-# cp -r hypr $HOME/.config/
-# cp -r kitty $HOME/.config/
-# cp -r mako $HOME/.config/
-# cp -r nvim $HOME/.config/
-# cp -r rofi $HOME/.config/
-# cp -r swaylock $HOME/.config/
-# cp -r tmux $HOME/.config/
-# cp -r waybar $HOME/.config/
-# cp -r yazi $HOME/.config/
-# cp -r starship.toml $HOME/.config/
-# cp -r --remove-destination .bashrc $HOME
+# Install packages
+sudo pacman -Syyu --needed \
+    hyprland \
+    hyprpaper \
+	kitty \
+	mako \
+	rofi \
+	swaybg \
+	swaylock \
+	tmux \
+	waybar \
+	yazi \
+	starship \
+	nix \
+	pamixer \
+	discord \
+	spotify-launcher \
+	ttf-nerd-fonts-symbols \
+	ttf-firacode-nerd \
+	pipewire \
+	wireplumber \
+	qt5-wayland \
+	qt6-wayland \
+	noto-fonts \
+	firefox \
+	chromium \
+	thunderbird \
+ 	lazygit \
+	brightnessctl \
+	libnotify \
+	trash-cli \
+	ripgrep \
+	perl-file-homedir \
+	perl-yaml-tiny \
+	gcc \
+	make \
+    bluez \
+    bluez-utils \
+    pavucontrol \
+    pulseaudio \
+    pulseaudio-bluetooth \
+    vlc-plugin-pulse \
+    vlc \
+    xcur2png \
+    openssh \
+    wl-clipboard \
+    pyright \
+    ruff \
+    lua-language-server
+
+# Install dotfiles
+cp -r hypr $HOME/.config/
+cp -r kitty $HOME/.config/
+cp -r mako $HOME/.config/
+cp -r nvim $HOME/.config/
+cp -r rofi $HOME/.config/
+cp -r swaylock $HOME/.config/
+cp -r tmux $HOME/.config/
+cp -r waybar $HOME/.config/
+cp -r yazi $HOME/.config/
+cp -r starship.toml $HOME/.config/
+cp -r --remove-destination .bashrc $HOME
 
 # Install cursor theme
 tar -xvf Bibata-Modern-Ice.tar.xz
