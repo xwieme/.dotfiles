@@ -18,6 +18,7 @@ vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
 vim.opt.showmode = false -- don't show "-- INSERT --"
 vim.opt.colorcolumn = "80" -- Set a column indicator at 80 characters
+vim.opt.foldmethod = "indent"
 
 -- Searching
 vim.opt.incsearch = true -- search as characters are entered
