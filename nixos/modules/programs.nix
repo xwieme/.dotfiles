@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
@@ -32,7 +30,7 @@
     swaylock-effects
     waybar
     # Apps
-    neovim 
+    neovim
     firefox
     ghostty
     rofi
@@ -43,5 +41,6 @@
     vlc
     pavucontrol
     pulseaudio
+    clamav
   ];
 }
