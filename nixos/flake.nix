@@ -1,18 +1,28 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nvf.url = "github:notashelf/nvf";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    { nixpkgs, nvf, ... }:
-    {
-      # ↓ this is your host output in the flake schema
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        modules = [
-          nvf.nixosModules.default # <- this imports the NixOS module that provides the options
-          ./configuration.nix # <- your host entrypoint, `programs.nvf.*` may be defined here
-        ];
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./nixos/configuration.nix
+      ];
+    };
+
+    homeConfiguration = {
+      "xander@unknown" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacPackages.x86_64-linux;
+        extraSpacialArgs = {inherit inputs;};
+        modules = [./home-manager/home.nix];
       };
     };
+  };
 }
