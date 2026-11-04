@@ -5,22 +5,18 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/boot.nix
-    ./modules/networking.nix
-    ./modules/services.nix
-    ./modules/display.nix
-    ./modules/fonts.nix
-    ./modules/users.nix
-    ./modules/shell.nix
-    ./modules/programs.nix
-    ./modules/nvim
-    ./modules/tmux.nix
+    ./nixos/boot.nix
+    ./nixos/networking.nix
+    ./nixos/users.nix
+    ./nixos/display.nix
+    ./nixos/services.nix
+    ./nixos/programs.nix
   ];
 
   # Set your time zone.
   time.timeZone = "Europe/Brussels";
 
-  # virtualisation.docker.enable = true;
+  virtualisation.docker.enable = true;
 
   nix.extraOptions = ''
     experimental-features = nix-command flakes
