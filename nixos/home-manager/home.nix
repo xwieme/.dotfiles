@@ -5,7 +5,15 @@
   pkgs,
   ...
 }: {
-  imports = [./nvim.nix ./ghostty.nix ./hyprland.nix];
+  imports = [
+    ./hyprland.nix
+    ./programs/nvim.nix
+    ./programs/ghostty.nix
+    ./programs/rofi.nix
+    ./programs/swaylock.nix
+    ./services/mako.nix
+    ./services/hyprpaper.nix
+  ];
 
   home = {
     username = "xander";
@@ -22,7 +30,16 @@
     ghostty.enable = true;
     firefox.enable = true;
     lazygit.enable = true;
+    swaylock.enable = true;
+    rofi.enable = true;
   };
 
-  home.packages = with pkgs; [vlc];
+  services = {
+    hyprpaper.enable = true;
+    mako.enable = true;
+  };
+
+  wayland.windowManager.hyprland.enable = true;
+
+  home.packages = with pkgs; [vlc ctags];
 }

@@ -4,11 +4,20 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
       nvim-treesitter
       telescope-nvim
       blink-cmp
       harpoon2
+      {
+        plugin = nvim-lspconfig;
+        config = "require(./nvim/lsp.lua)";
+      }
     ];
+    generatedConfigs = {
+      lua = ''
+        require(./nvim/keymaps.lua)
+        require(./nvim/options.lua)
+      '';
+    };
   };
 }
