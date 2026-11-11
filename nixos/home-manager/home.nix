@@ -12,6 +12,7 @@
     ./hyprland.nix
     ./programs/nvim.nix
     ./programs/foot.nix
+    ./programs/tmux.nix
     # ./programs/rofi.nix
     ./programs/swaylock.nix
     ./services/mako.nix
