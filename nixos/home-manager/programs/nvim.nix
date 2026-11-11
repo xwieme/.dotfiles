@@ -10,14 +10,12 @@
       harpoon2
       {
         plugin = nvim-lspconfig;
-        config = "require(./nvim/lsp.lua)";
+        config = "require(\"./nvim/lsp\")";
       }
     ];
-    generatedConfigs = {
-      lua = ''
-        require(./nvim/keymaps.lua)
-        require(./nvim/options.lua)
-      '';
-    };
+    initLua = ''
+      require("./nvim/keymaps")
+      require("./nvim/options")
+    '';
   };
 }

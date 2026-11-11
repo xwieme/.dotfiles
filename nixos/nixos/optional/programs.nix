@@ -10,6 +10,7 @@
     ripgrep
     gnumake
     cachix
+    neovim
     # Window Manager
     hyprcursor
     hyprpaper
@@ -23,8 +24,8 @@
     swaylock-effects
     waybar
     # Apps
-    ghostty
-    rofi
+    foot
+    # rofi
     pavucontrol
     pulseaudio
     clamav

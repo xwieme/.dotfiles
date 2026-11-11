@@ -5,12 +5,12 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./nixos/boot.nix
-    ./nixos/networking.nix
-    ./nixos/users.nix
-    ./nixos/display.nix
-    ./nixos/services.nix
-    ./nixos/programs.nix
+    ./core/boot.nix
+    ./core/networking.nix
+    ./core/display.nix
+    ./optional/users.nix
+    ./optional/services.nix
+    ./optional/programs.nix
   ];
 
   # Set your time zone.
