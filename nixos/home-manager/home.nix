@@ -5,11 +5,14 @@
   pkgs,
   ...
 }: {
+  wayland.windowManager.hyprland.enable = true;
+  fonts.fontconfig.enable = true;
+
   imports = [
     ./hyprland.nix
     ./programs/nvim.nix
-    ./programs/ghostty.nix
-    ./programs/rofi.nix
+    ./programs/foot.nix
+    # ./programs/rofi.nix
     ./programs/swaylock.nix
     ./services/mako.nix
     ./services/hyprpaper.nix
@@ -18,6 +21,7 @@
   home = {
     username = "xander";
     homeDirectory = "/home/xander";
+    stateVersion = "26.05";
   };
 
   programs = {
@@ -25,21 +29,22 @@
     neovim.enable = true;
     git.enable = true;
     tmux.enable = true;
-    obsidian.enable = true;
+    # obsidian.enable = true;
     thunderbird.enable = true;
-    ghostty.enable = true;
+    foot.enable = true;
     firefox.enable = true;
     lazygit.enable = true;
     swaylock.enable = true;
-    rofi.enable = true;
+    ranger.enable = true;
+    # rofi.enable = true;
   };
 
   services = {
     hyprpaper.enable = true;
     mako.enable = true;
+    hyprlauncher.enable = true;
+    hyprpolkitagent.enable = true;
   };
 
-  wayland.windowManager.hyprland.enable = true;
-
-  home.packages = with pkgs; [vlc ctags];
+  home.packages = with pkgs; [vlc ctags wl-clipboard fira-code];
 }
