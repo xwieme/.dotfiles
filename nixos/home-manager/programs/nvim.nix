@@ -4,18 +4,28 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      vim-tmux-navigator
       nvim-treesitter
-      telescope-nvim
-      blink-cmp
-      harpoon2
+      {
+        plugin = telescope-nvim;
+        config = builtins.readFile ./nvim/telescope.lua;
+      }
+      {
+        plugin = blink-cmp;
+        config = builtins.readFile ./nvim/blink-cmp.lua;
+      }
+      {
+        plugin = harpoon2;
+        config = builtins.readFile ./nvim/harpoon.lua;
+      }
       {
         plugin = nvim-lspconfig;
-        config = "require(\"./nvim/lsp\")";
+        config = builtins.readFile ./nvim/lsp.lua;
       }
     ];
     initLua = ''
-      require("./nvim/keymaps")
-      require("./nvim/options")
+        ${builtins.readFile ./nvim/keymaps.lua}
+        ${builtins.readFile ./nvim/options.lua}
     '';
   };
 }
