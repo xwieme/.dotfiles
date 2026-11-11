@@ -33,6 +33,6 @@
     grace-no-touch = true;
     datestr = "%a %d %B";
     ignore-empty-password = true;
-    image = ~/Pictures/wallpaper.jpg;
+    image = "~/Pictures/wallpaper.jpg";
   };
 }
