@@ -4,11 +4,14 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+    catppuccin,
     ...
   } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -20,7 +23,10 @@
     homeConfigurations.xander = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = {inherit inputs;};
-      modules = [./home-manager/home.nix];
+      modules = [
+        ./home-manager/home.nix 
+        catppuccin.homeModules.catppuccin
+      ];
     };
   };
 }

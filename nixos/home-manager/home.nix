@@ -8,13 +8,16 @@
   wayland.windowManager.hyprland.enable = true;
   fonts.fontconfig.enable = true;
 
+  catppuccin.autoEnable = true;
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
+  catppuccin.accent = "teal";
+
   imports = [
     ./hyprland.nix
     ./programs/nvim.nix
     ./programs/foot.nix
     ./programs/tmux.nix
-    # ./programs/rofi.nix
-    ./programs/swaylock.nix
     ./services/mako.nix
     ./services/hyprpaper.nix
   ];
@@ -27,15 +30,16 @@
 
   programs = {
     home-manager.enable = true;
+    zsh.enable = true;
     neovim.enable = true;
     git.enable = true;
     tmux.enable = true;
     # obsidian.enable = true;
-    thunderbird.enable = true;
+    # thunderbird.enable = true;
     foot.enable = true;
     firefox.enable = true;
     lazygit.enable = true;
-    swaylock.enable = true;
+    hyprlock.enable = true;
     ranger.enable = true;
     # rofi.enable = true;
   };
@@ -47,5 +51,5 @@
     hyprpolkitagent.enable = true;
   };
 
-  home.packages = with pkgs; [vlc ctags wl-clipboard fira-code];
+  home.packages = with pkgs; [vlc ctags wl-clipboard fira-code fd];
 }
