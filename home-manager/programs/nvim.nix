@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.neovim = {
     defaultEditor = true;
     vimAlias = true;
@@ -22,10 +22,14 @@
         plugin = nvim-lspconfig;
         config = builtins.readFile ./nvim/lsp.lua;
       }
+      {
+        plugin = conform-nvim;
+        config = builtins.readFile ./nvim/conform.lua;
+      }
     ];
     initLua = ''
-        ${builtins.readFile ./nvim/keymaps.lua}
-        ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./nvim/keymaps.lua}
+      ${builtins.readFile ./nvim/options.lua}
     '';
   };
 }
