@@ -1,18 +1,18 @@
-{pkgs, ...}: {
-    programs.tmux = {
-        
-        prefix = "C-Space";
-        mouse = true;
-        keyMode = "vi";
-        baseIndex = 1;
-        sensibleOnTop = true;
+{ pkgs, ... }: {
+  programs.tmux = {
 
-        plugins = with pkgs.tmuxPlugins; [
-           yank
-           catppuccin
-           vim-tmux-navigator
-        ];
+    prefix = "C-Space";
+    mouse = true;
+    keyMode = "vi";
+    baseIndex = 1;
+    sensibleOnTop = true;
 
-    };
+    plugins = with pkgs.tmuxPlugins; [
+      yank
+      catppuccin
+      vim-tmux-navigator
+    ];
+
+  };
 
 }

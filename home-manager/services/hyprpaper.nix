@@ -1,5 +1,5 @@
 {
   services.hyprpaper.settings = {
-    wallpaper = [{path = "$HOME/.dotfiles/wallpaper.jpg";}];
+    wallpaper = [ { path = "$HOME/.dotfiles/wallpaper.jpg"; } ];
   };
 }
