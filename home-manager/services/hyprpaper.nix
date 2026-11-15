@@ -1,5 +1,11 @@
-{
+{ config, ... }: {
   services.hyprpaper.settings = {
-    wallpaper = [ { path = "$HOME/.dotfiles/wallpaper.jpg"; } ];
+    preload = [ "${config.home.homeDirectory}/.dotfiles/wallpaper.jpg" ];
+    wallpaper = [
+      {
+        monitor = "";
+        path = "${config.home.homeDirectory}/.dotfiles/wallpaper.jpg";
+      }
+    ];
   };
 }
