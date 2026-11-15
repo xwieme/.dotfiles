@@ -16,10 +16,10 @@
       ...
     }@inputs:
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./nixos/configuration.nix
-        ];
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ ./nixos/configuration.nix ];
       };
 
       homeConfigurations.xander = home-manager.lib.homeManagerConfiguration {

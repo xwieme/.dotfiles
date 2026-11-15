@@ -10,24 +10,28 @@
     ripgrep
     gnumake
     cachix
-    neovim
     # Window Manager
     hyprcursor
     hyprpaper
     libnotify
     mako
     trash-cli
-    starship
     brightnessctl
     pamixer
-    swaybg
-    swaylock-effects
-    waybar
     # Apps
-    foot
-    # rofi
     pavucontrol
-    pulseaudio
     clamav
   ];
+
+  programs = {
+    waybar.enable = true;
+    foot.enable = true;
+    neovim.enable = true;
+    starship.enable = true;
+  };
+
+  # services = {
+  #   pulseaudio.enable = true;
+  # };
+
 }
